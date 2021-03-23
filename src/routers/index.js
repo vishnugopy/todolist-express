@@ -3,9 +3,6 @@ const listcontroller = require("../controllers/listcontroller")
 
 const router = express.Router();
 
-router.get("/" , (request , response)=>{
-    const lists = listcontroller.findAll();
-    response.render("home.ejs" , { lists })
-});
+router.get("/" , listcontroller.findAll );
 
 module.exports = router;
