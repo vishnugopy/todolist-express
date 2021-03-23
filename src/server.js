@@ -13,6 +13,6 @@ server.set("views" , "./src/views")
 
 server.use(router)
 
-server.listen(1010 , () => {
+server.listen(8080 , () => {
     console.log("still runing me");
 })
