@@ -8,7 +8,7 @@ class Lists {
   }
 
   static getAll(callback) {
-    db.query("SELECT * FROM lists", (error, result) => {
+    db.query("SELECT * FROM list", (error, result) => {
       if (error) {
         console.log("error: ", error);
         callback(error, null);
