@@ -26,3 +26,16 @@ exports.getOne = (todolist, callback) => {
   })
 }
 
+//add lists
+exports.create = (lists, callback) => {
+  db.query(`INSERT INTO list (name) VALUES ("${lists.name}");`, (error, result) => {
+    if (error) {
+      console.log("error: ", error);
+      callback(error, null);
+      return;
+    }
+    
+    callback(null, result);
+  })
+}
+

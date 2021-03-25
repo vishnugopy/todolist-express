@@ -26,11 +26,12 @@ exports.findOne = (request, response) => {
     const taskoftasks = result;
     const Tasks = result[0].name;
 
+    console.log("tasksss ", taskoftasks);
+    console.log("tasksss ", Tasks);
+
     response.render("tasks.ejs", { Tasks,  taskoftasks });
   });
 }
-
-
 
 
 exports.addOne = (request, response) => {
