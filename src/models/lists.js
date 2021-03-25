@@ -14,8 +14,8 @@ exports.getAll = (callback) => {
   })
 }
 
-exports.getOne = (id, callback) => {
-  db.query(`SELECT * FROM promos INNER JOIN students ON promos.id = students.promo_id WHERE promos.id = ${id};`, (error, result) => {
+exports.getOne = (todolist, callback) => {
+  db.query(`SELECT * FROM list INNER JOIN tasks ON list.id_list = tasks.id_tasks WHERE tasks.id_tasks = ${todolist};`, (error, result) => {
     if (error) {
       console.log("error: ", error);
       callback(error, null);
@@ -26,14 +26,3 @@ exports.getOne = (id, callback) => {
   })
 }
 
-exports.create = (promo, callback) => {
-  db.query(`INSERT INTO promos (name) VALUES ("${promo.name}");`, (error, result) => {
-    if (error) {
-      console.log("error: ", error);
-      callback(error, null);
-      return;
-    }
-    
-    callback(null, result);
-  })
-}

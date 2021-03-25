@@ -16,19 +16,22 @@ exports.findAll = (request, response) => {
 
 //step2
 exports.findOne = (request, response) => {
-  const { id } = request.params;
+  const { todolist } = request.params;
 
-  Lists.getOne(id, (error, result) => {
+  Lists.getOne(todolist, (error, result) => {
     if (error) {
       response.send(error.message);
     }
 
-    const students = result;
-    const promoName = result[0].name;
+    const taskoftasks = result;
+    const Tasks = result[0].name;
 
-    response.render("promo.ejs", { promoName, students });
+    response.render("tasks.ejs", { Tasks,  taskoftasks });
   });
 }
+
+
+
 
 exports.addOne = (request, response) => {
   Lists.create(request.body, (error, result) => {
