@@ -20,7 +20,8 @@
 
     <ul>
         <% lists.forEach((list)=>{ %>
-            <li> <a href="<%= `/lists/1` %>"> <%= list.name %></a></li>
+            <!-- <li> <a href="<%= "/lists/1" %>"> <%= list.name %></a></li> -->
+            <li> <a href="/lists/<%= list.id_list %>"> <%= list.name %></a></li>
         <% })%>
 
     </ul>
