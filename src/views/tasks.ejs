@@ -6,19 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/style.css">
-  <title>Document</title>
+  <title>TASKS</title>
 </head>
 
 <body>
+  <a href="http://localhost:1111/">Home</a>
   <main>
-    <h1><%= Tasks %></h1>
+    <h1><%= Tasks %></h1> 
     
     <form action="/tasks" method="POST">
       <label for="descreption">Task:</label>
       <input type="text" name="descreption" />
-      <br> <br>
-      <label for="date">Date:</label>
-      <input type="date" name="date" />
+      <input class="hide" id="datePicker" type="date" name="date" />
+      <input class="hide"  type="number" name="todolist" value="<%= taskid %>" />
       <input type="submit" value="+"/>
     </form>
     
@@ -26,11 +26,14 @@
 
   <ul>
     <% taskoftasks.forEach((taskss) => { %>
-    <li><%= `${taskss.description}_______________${taskss.date} ` %></a></li>
+    <li><%= `${taskss.description}   _______________   ${taskss.date} ` %></a></li>
     <% }) %>
   </ul>
 
   </main>
+  <script>
+    document.getElementById('datePicker').valueAsDate = new Date();
+  </script>
 </body>
 
 </html>

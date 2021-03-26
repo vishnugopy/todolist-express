@@ -3,7 +3,7 @@ const db = require("../db");
 
 
 exports.getAll = (callback) => {
-  db.query("SELECT * FROM list;", (error, result) => {
+  db.query("SELECT * FROM list ORDER BY id_list DESC;", (error, result) => {
     if (error) {
       console.log("error: ", error);
       callback(error, null);
@@ -39,8 +39,10 @@ exports.create = (lists, callback) => {
   })
 }
 
+
+//not working yet
 exports.removeone = ( callback) => {
-  db.query(`DROP FROM list WHERE id_list = 3;`, (error, result) => {
+  db.query(`DELETE FROM list WHERE id_list = 3;`, (error, result) => {
     if (error) {
       console.log("error: ", error);
       callback(error, null);

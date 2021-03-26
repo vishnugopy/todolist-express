@@ -6,9 +6,9 @@ const router = express.Router();
 
 router.get("/" , listcontroller.findAll );
 router.get("/lists/:todolist", listcontroller.findOne);
-router.post("/lists", listcontroller.addOne);
+router.post("/lists/", listcontroller.addOne);
 router.post("/tasks", taskcontroller.addtask);
 
-router.post("/lists/delete", listcontroller.delete);
+router.post("/lists/:delete", listcontroller.delete);
 
 module.exports = router;

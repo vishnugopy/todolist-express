@@ -18,6 +18,7 @@ exports.findAll = (request, response) => {
 exports.findOne = (request, response) => {
   const { todolist } = request.params;
 
+
   Lists.getOne(todolist, (error, result) => {
     if (error) {
       response.send(error.message);
@@ -25,6 +26,8 @@ exports.findOne = (request, response) => {
 
     let taskoftasks = result;
     let Tasks ;
+    let taskid = todolist;
+    
 
     if(result == ""  ){
       Tasks = "No tasks available Add it";
@@ -32,10 +35,7 @@ exports.findOne = (request, response) => {
       Tasks = result[0].name;
     }
 
-    // console.log("tasksss ", taskoftasks);
-    // console.log("tasksss ", Tasks);
-
-    response.render("tasks.ejs", { Tasks,  taskoftasks });
+    response.render("tasks.ejs", { Tasks,  taskoftasks , taskid });
   });
 }
 
