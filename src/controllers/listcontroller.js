@@ -49,3 +49,16 @@ exports.addOne = (request, response) => {
     response.redirect("/");
   })
 }
+
+
+
+
+exports.delete = (request, response) => {
+  Lists.removeone(request.body, (error, result) => {
+    if (error) {
+      response.send(error.message);
+    }
+
+    response.redirect("/");
+  })
+}

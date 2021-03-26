@@ -39,3 +39,16 @@ exports.create = (lists, callback) => {
   })
 }
 
+exports.removeone = ( callback) => {
+  db.query(`DROP FROM list WHERE id_list = 3;`, (error, result) => {
+    if (error) {
+      console.log("error: ", error);
+      callback(error, null);
+      return;
+    }
+
+    callback(null, result);
+  })
+}
+
+
