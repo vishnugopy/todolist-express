@@ -15,7 +15,7 @@ exports.getAll = (callback) => {
 }
 
 exports.getOne = (todolist, callback) => {
-  db.query(`SELECT * FROM list INNER JOIN tasks ON list.id_list = tasks.id_tasks WHERE list.id_list = ${todolist};`, (error, result) => {
+  db.query(`SELECT * FROM tasks INNER JOIN list ON list.id_list = tasks.todolist WHERE list.id_list = ${todolist};`, (error, result) => {
     if (error) {
       console.log("error: ", error);
       callback(error, null);

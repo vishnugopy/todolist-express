@@ -21,7 +21,17 @@
     <ul>
         <% lists.forEach((list)=>{ %>
             <!-- <li> <a href="<%= "/lists/1" %>"> <%= list.name %></a></li> -->
-            <li> <a href="/lists/<%= list.id_list %>"> <%= list.name %></a></li>
+            <!-- <li> <a href="/lists/<%= list.id_list %>"> <%= list.name %></a></li> -->
+
+
+            <li> 
+                <a href="/lists/<%= list.id_list %>">
+                    <input type="checkbox" name="<%= list.name %>">
+                    <label for="<%= list.name %>"><%= list.name %></label>
+                </a>
+            </li>
+
+           
         <% })%>
 
     </ul>

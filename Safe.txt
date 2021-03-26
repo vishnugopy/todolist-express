@@ -1,0 +1,19 @@
+create table list (
+id_list INT(6) AUTO_INCREMENT, 
+name VARCHAR(300) NOT NULL, 
+primary key(id));
+
+INSERT INTO list (name) VALUES ("vacance plan");
+
+
+
+CREATE TABLE tasks(
+id_tasks INT(6) AUTO_INCREMENT NOT NULL,
+description VARCHAR(300) NOT NULL,
+date VARCHAR(10) NOT NULL, 
+todolist INT NOT NULL,
+PRIMARY KEY(id_tasks), 
+fini TINYINT DEFAULT 0,
+FOREIGN KEY (todolist) REFERENCES list(id_list));
+
+INSERT INTO tasks (description, date, todolist) VALUES ("polish my shoes", "24/03/2021", 2);

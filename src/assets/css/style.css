@@ -22,9 +22,22 @@ h1{
 form{
     /* border: 1px solid black; */
     margin: 0 auto;
-    width: 46%;
+    width: 50%;
 }
 
 a{
     text-decoration: none;
+}
+
+
+input[type=checkbox]:checked + label{
+color: red;
+text-decoration: line-through;
+}
+
+ul li{
+    list-style: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.137);
+    margin: 3% auto;
+    padding: 1%;
 }

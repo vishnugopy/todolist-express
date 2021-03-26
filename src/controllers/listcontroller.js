@@ -23,11 +23,17 @@ exports.findOne = (request, response) => {
       response.send(error.message);
     }
 
-    const taskoftasks = result;
-    const Tasks = result[0].name;
+    let taskoftasks = result;
+    let Tasks ;
 
-    console.log("tasksss ", taskoftasks);
-    console.log("tasksss ", Tasks);
+    if(result == ""  ){
+      Tasks = "No tasks available Add it";
+    } else{
+      Tasks = result[0].name;
+    }
+
+    // console.log("tasksss ", taskoftasks);
+    // console.log("tasksss ", Tasks);
 
     response.render("tasks.ejs", { Tasks,  taskoftasks });
   });
